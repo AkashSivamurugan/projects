@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Bus Route Destination</title>
+    <style>
+      *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+#page-wrapper {
+  width: 640px;
+  background: #FFFFFF;
+  padding: 1em;
+  margin: 1em auto;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #999999;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em 0.5em;
+  font-size: 1.2em;
+  border-radius: 3px;
+  border: 1px solid #D9D9D9;
+}
+
+
+button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8em;
+  background: #69c773;
+  border-bottom: 1px solid #498b50;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 1;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+</style>
+</head>
+<body>
+  
+
+  <form action="p2code.php" method="POST">
+<div id="page-wrapper">
+
+  <h1>Bus Timing's</h1>
+  
+  <label for="default">Bus Type</label>
+  <input type="text" id="default" list="types" placeholder="e.g. Muffusil">
+  
+  <datalist id="types">
+    <option value="Type-1">
+    <option value="Type-2">
+    <option value="Type-3">
+    <option value="Type-4">
+    <option value="Type-5">
+  
+  </datalist>
+
+  
+  <label for="default">Bus Time</label>
+  <input type="text" id="default" list="time" placeholder="e.g. 9:00 AM">
+  
+  <datalist id="time">
+    <option value="9:00 AM">
+    <option value="10:00 AM">
+    <option value="11:00 AM">
+    <option value="12:00 PM">
+    <option value="1:00 PM">
+  
+  </datalist>
+  <label for="default">Bus Route</label>
+  <input type="text" id="default" list="route" placeholder="e.g. Tvr -- Ttp AM">
+  
+  <datalist id="route">
+    <option value="Route-1">
+    <option value="Route-2">
+    <option value="Route-3">
+    <option value="Route-4">
+    <option value="Route-5">
+  
+  </datalist>
+  <label for="default">Bus Corporation</label>
+  <input type="text" id="default" list="crp" placeholder="e.g. TNSTC ">
+  
+  <datalist id="crp">
+    <option value="Corporation-1">
+    <option value="Corporation-2">
+    <option value="Corporation-3">
+    <option value="Corporation-4">
+    <option value="Corporation-5">
+   
+
+  </datalist>
+  
+
+<script>
+  // Get the <datalist> and <input> elements.
+var dataList = document.getElementById('json-datalist');
+var input = document.getElementById('ajax');
+
+// Create a new XMLHttpRequest.
+var request = new XMLHttpRequest();
+
+// Handle state changes for the request.
+request.onreadystatechange = function(response) {
+  if (request.readyState === 4) {
+    if (request.status === 200) {
+      // Parse the JSON
+      var jsonOptions = JSON.parse(request.responseText);
+  
+      // Loop over the JSON array.
+      jsonOptions.forEach(function(item) {
+        // Create a new <option> element.
+        var option = document.createElement('option');
+        // Set the value using the item in the JSON array.
+        option.value = item;
+        // Add the <option> element to the <datalist>.
+        dataList.appendChild(option);
+      });
+      
+      // Update the placeholder text.
+      input.placeholder = "e.g. datalist";
+    } else {
+      // An error occured :(
+      input.placeholder = "Couldn't load datalist options :(";
+    }
+  }
+};
+
+// Update the placeholder text.
+input.placeholder = "Loading options...";
+
+// Set up and make the request.
+request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/html-elements.json', true);
+request.send();
+</script>
+  
+</div>
+</option>
+
+<style>
+   button {
+            position: relative;left: 45%;bottom: -20px;
+            background-color: #007bff;
+            color: #fff;
+            width: 12%;
+            padding: 10px 50px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-bottom: 20px;}
+          </style>
+
+<button href="page3.html">Search</button>
+</form>
+</body>

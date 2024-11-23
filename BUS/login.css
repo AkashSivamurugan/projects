@@ -1,0 +1,119 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.main{
+	width: 100%;
+	
+	background-position: center;
+	background-size: cover;
+	height: 109vh;
+
+}
+
+.btn{
+	width: 240px;
+	height: 40px;
+	background: #ff7200;
+	border:none;
+	margin-top: 30px;
+	color: black;
+	font-size: 18px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	transition: 0.4s ease;
+
+}
+
+
+.btn:hover{
+	background: whitesmoke;
+	color:#ff7200;
+}
+.btn a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+.btn.focus{
+	outline: none;
+}
+.form{
+	height: 250px;
+	width: 250px;
+	position:absolute;
+	top: 250px;
+	left: 940px;
+	border-radius: 200px;
+	padding: 10px;
+}
+.was{
+		height: 250px;
+	width: 250px;
+	position:absolute;
+	top: 250px;
+	left: 10px;
+	border-radius: 200px;
+	padding: 10px;
+
+
+}
+.form h2{
+	width: 220px;
+	font-family: sans-serif;
+	text-align:top;
+	color: #ff7200;
+	font-size: 15px;
+	border-radius: 100px;
+	margin: -20px;
+	padding: -35px;
+
+}
+.form input{
+	width: 240px;
+	height: 70px;
+	background: transparent;
+	border-bottom: 1px solid #ff7200;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+}
+.link{
+	padding-top: 15px;
+	padding-bottom: 20px;
+	text-align: bottom;
+	color: white;
+}
+span{
+	color:#ff7200 ;
+}
+
+::placeholder{
+	color: whitesmoke;
+	font-family: Arial;
+}
+.box{
+	width: 300px;
+	padding: 30px;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background: transparent;
+	text-align: center;
+
+}
+.box input[type="submit"]{
+	border: 0;
+	background:none;
+	display: block;
+	margin: 20px auto;
+	padding: 14px 10px;
+	color: floralwhite;
+	font-size: 20px;
+	border-radius: 24px;
+	transition: 0.25px;
+	cursor: pointer;
+}
